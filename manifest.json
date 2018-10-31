@@ -1,0 +1,33 @@
+{
+   "name": "Applyd",
+   "version": "1.0",
+   "description": "Store info about jobs applied via LinkedIn, Indeed and Google search",
+   "permissions": [
+      "https://www.linkedin.com/jobs/view/*", 
+      "http://www.linkedin.com/jobs/view/*",
+      "https://www.indeed.com/",
+      "tabs",
+      "storage"
+   ],
+   "background": {
+      "scripts": ["main.js"],
+      "persistent": false
+   },
+   "page_action": {
+      "default_title": "I Applied!",
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [{
+      "matches": [
+         "https://www.linkedin.com/jobs/view/*", 
+         "http://www.linkedin.com/jobs/view/*",
+         "https://www.indeed.com/"
+      ],
+      "js": [
+         "jquery-1.7.min.js",
+         "scan.js"
+      ],
+      "run_at": "document_end"
+   }],
+   "manifest_version": 2
+}
