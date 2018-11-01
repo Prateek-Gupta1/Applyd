@@ -35,7 +35,6 @@ var jobMng = (function(sm){
 
 chrome.runtime.onMessage.addListener(function (msg, sender, response) {
    // First, validate the message's structure
-   console.log("Message " + msg);
    if ((msg.from === 'applyd_popup') && (msg.subject === 'storeJobInfo')) {
      console.log(msg.job);
      jobMng.store(msg.job);
@@ -46,9 +45,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
  chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
    //console.log(tab.url.includes('www.linkedin.com/jobs/view'));
     if(tab.url.indexOf("www.linkedin.com/jobs/view") !== -1){
-        chrome.pageAction.show(tab.id, function(){
-          
-        });
+        chrome.pageAction.show(tab.id);
     }else{
         chrome.pageAction.hide(tab.id);
     }
