@@ -1,4 +1,5 @@
-
+(function(){
+   
 //Listen to incoming requests to scan job info.
 chrome.runtime.onMessage.addListener(function(msg, sender, response){
    if(msg.from === 'applyd_popup' && msg.subject === 'scanInfo'){
@@ -46,3 +47,9 @@ function scanLinkedInPage(){
       })
    return jobInfo;
 }
+
+function scanIndeedPage(){
+
+}
+
+}());
