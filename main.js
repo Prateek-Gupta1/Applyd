@@ -43,8 +43,8 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
  });
 
  chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
-   //console.log(tab.url.includes('www.linkedin.com/jobs/view'));
-    if(tab.url.indexOf("www.linkedin.com/jobs/view") !== -1){
+    if(tab.url.indexOf("www.linkedin.com/jobs/view") !== -1 
+        || tab.url.indexOf("www.indeed.com/jobs/") !== -1){
         chrome.pageAction.show(tab.id);
     }else{
         chrome.pageAction.hide(tab.id);
