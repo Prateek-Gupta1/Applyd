@@ -22,6 +22,13 @@ function scanLinkedInPage(){
    jobInfo.jobTitle = $('.jobs-details-top-card__job-title').text().trim();
    jobInfo.company = $('.jobs-details-top-card__company-info a').text().trim();
    jobInfo.location = $('.jobs-details-top-card__bullet').first().text().trim();
+
+   var now = new Date();
+   var day = ("0" + now.getDate()).slice(-2);
+   var month = ("0" + (now.getMonth() + 1)).slice(-2);
+   var today = now.getFullYear()+"-"+(month)+"-"+(day);
+   jobInfo.date = today;
+
    jobInfo.description = "";
    $('.jobs-box__html-content.jobs-description-content__text')
       .contents()

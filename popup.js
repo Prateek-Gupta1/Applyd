@@ -3,19 +3,11 @@
   var jobInfo = {}
 
   function setDOMInfo(info) {
-    console.log(info);
     $('#company').val(info.company);
     $('#jobTitle').val(info.jobTitle);
     $('#location').val(info.location);
     $('#description').val(info.description);
-
-    var now = new Date();
-    var day = ("0" + now.getDate()).slice(-2);
-    var month = ("0" + (now.getMonth() + 1)).slice(-2);
-    var today = now.getFullYear()+"-"+(month)+"-"+(day);
-    $('#date').val(today);
-    info.date = today;
-
+    $('#date').val(info.date);
     jobInfo = info;
   }
  
