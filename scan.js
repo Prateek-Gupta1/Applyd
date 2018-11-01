@@ -1,5 +1,5 @@
 (function(){
-   
+
 //Listen to incoming requests to scan job info.
 chrome.runtime.onMessage.addListener(function(msg, sender, response){
    if(msg.from === 'applyd_popup' && msg.subject === 'scanInfo'){
@@ -39,9 +39,9 @@ function scanLinkedInPage(){
          }else if(this.nodeType === 1){
             $(this).contents()
             .filter(function(){
-               if(this.nodeType === 1){
+               //if(this.nodeType === 1){
                   jobInfo.description += this.textContent.indexOf('undefined') === -1 ? this.textContent : "";
-               }
+              // }
             })
          }
       })
