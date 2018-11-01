@@ -14,6 +14,8 @@
     var month = ("0" + (now.getMonth() + 1)).slice(-2);
     var today = now.getFullYear()+"-"+(month)+"-"+(day);
     $('#date').val(today);
+    info.date = today;
+
     jobInfo = info;
   }
  
@@ -34,14 +36,18 @@
       });
   }
 
+  function storeJobInfo(job){
+    chrome.runtime.sendMessage({from: 'applyd_popup', subject: 'storeJobInfo', job: job}, function(res){
+      console.log(res);
+    });
+  }
   
   // Once the DOM is ready...
   window.addEventListener('DOMContentLoaded', function () {
-    
     // add listener on button to store the job details...
     $(document).ready(function(){
       $('#saveButton').click(function(){
-        console.log(jobInfo);
+        storeJobInfo(jobInfo);
       });
     })
     // ask content script to scan and send the job details...
