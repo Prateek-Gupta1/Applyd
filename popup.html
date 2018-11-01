@@ -1,24 +1,45 @@
+<!doctype html>
 <html>
    <head>
       <title>Apply</title>
-      <script type="text/javascript" src="jquery-1.7.min.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
       <script type="text/javascript" src="popup.js"></script>
-      <style>
-         html{
-            height: 500px;
-            width: 400px;
-         }
-      </style>
+      <!-- <script type="text/javascript" src="jquery-1.7.min.js"></script> -->
+     
    </head>
    <body>
-      <div class="container">
-         <input id="company" type="text">
-         <input id="jobTitle" type="text">
-         <input id="location" type="text">
-         <input id="date" type="date">
-         <textarea id="description" id="description" cols="30" rows="10">Job description</textarea>
-         <button type="button" id="scan">Scan</button>
-         <button id="saveButton">Save Info</button>
-      </div>
+         <div class="card">
+            <div class="card-header text-center"> Job details </div>
+            <div class="card-body">
+               <form >
+                  <div class="form-group">
+                     <label for="company">Company Name</label>
+                     <input id="company" type="text" placeholder="Enter Company Name" class="form-control"/>
+                  </div>
+                  <div class="form-group">
+                     <label for="jobTitle">Job Title</label>
+                     <input id="jobTitle" type="text" placeholder="Enter title of the role" class="form-control"/>
+                  </div>
+                  <div class="form-group">
+                     <label for="location">Job Location</label>
+                     <input id="location" type="text" placeholder="Enter location of office" class="form-control"/>
+                  </div>
+                  <div class="form-group">
+                     <label for="description">Job Description</label>
+                     <textarea id="description" rows="3" class="form-control"></textarea>
+                  </div>
+                  <div class="form-group">
+                     <label for="date">Date Applied</label>
+                     <input type="date" id="date" class="form-control"/>
+                  </div>
+                  <button id="saveButton" class="btn btn-primary">Save Info</button>
+               </form>
+            </div>
+         </div>
+      
    </body>
 </html>

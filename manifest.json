@@ -24,7 +24,7 @@
          "https://www.indeed.com/"
       ],
       "js": [
-         "jquery-1.7.min.js",
+         "js/jquery-1.7.min.js",
          "scan.js"
       ],
       "run_at": "document_end"
