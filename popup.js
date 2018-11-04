@@ -6,7 +6,7 @@
     $('#company').val(info.company);
     $('#jobTitle').val(info.jobTitle);
     $('#location').val(info.location);
-    $('#description').val(info.description);
+    $('#description').val(info.description.trim());
     $('#date').val(info.date);
     jobInfo = info;
   }
@@ -40,6 +40,12 @@
     $(document).ready(function(){
       $('#saveButton').click(function(){
         storeJobInfo(jobInfo);
+      });
+      $('#showButton').click(function(){
+        chrome.windows.create({
+          url: chrome.runtime.getURL('jobs.html'),
+          type: 'normal'
+        })
       });
     })
     // ask content script to scan and send the job details...

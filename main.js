@@ -26,6 +26,7 @@ var jobMng = (function(sm){
    }
 
    manager.getAllApplied = function(){
+      console.log("all jobs :" + JSON.parse(sm.get(sm.dbKey)));
       return JSON.parse(sm.get(sm.dbKey));
    }
 
@@ -47,6 +48,9 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
         || tab.url.indexOf("www.indeed.com/jobs/") !== -1){
         chrome.pageAction.show(tab.id);
     }else{
-        chrome.pageAction.hide(tab.id);
+        chrome.pageAction.hide(tab.id, function(){
+          if (chrome.runtime.lastError)
+            console.log(chrome.runtime.lastError.message);
+        });
     }
  });

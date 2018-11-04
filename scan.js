@@ -31,7 +31,7 @@ function scanLinkedInPage(){
    jobInfo.date = today;
 
    jobInfo.description = "";
-   $('.jobs-box__html-content.jobs-description-content__text')
+   $('.jobs-box__html-content.jobs-description-content__text > span:first')
       .contents()
       .filter(function(){
          if(this.nodeType === 3){
