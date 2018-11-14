@@ -1,51 +1,68 @@
 <!doctype html>
 <html>
-   <head>
+
+<head>
       <title>Apply</title>
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <script type="text/javascript" src="js/jquery-1.7.min.js"></script>
       <script type="text/javascript" src="js/bootstrap.min.js"></script>
       <script type="text/javascript" src="popup.js"></script>
       <!-- <script type="text/javascript" src="jquery-1.7.min.js"></script> -->
-     <style>
-           body{
+      <style>
+            body{
                  width: 400px;
                  margin: auto;
+                 height: 100%;
            }
      </style>
-   </head>
-   <body>
-         <div class="card">
-            <div class="card-header text-center"> Job details </div>
-            <div class="card-body">
-               <form >
-                  <div class="form-group">
-                     <label for="company">Company Name</label>
-                     <input id="company" type="text" placeholder="Enter Company Name" class="form-control"/>
+</head>
+
+<body>
+      <div class="container">
+            <nav class="navbar fixed-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Applyd</a>
+                <ul class = "nav navbar-nav navbar-right">
+                      <li>
+                            <button type="button" id="showButton" class="btn btn-secondary">Show Applied</button>
+                      </li>
+                </ul>
+            </nav>
+            <br><br><br>
+            <div class="card" id="content">
+                  <div class="card-header text-center"> Job details </div>
+                  <div class="card-body">
+                        <div>
+                              <div class="form-group">
+                                    <label for="company">Company Name</label>
+                                    <input id="company" type="text" placeholder="Enter Company Name" class="form-control" />
+                              </div>
+                              <div class="form-group">
+                                    <label for="jobTitle">Job Title</label>
+                                    <input id="jobTitle" type="text" placeholder="Enter title of the role" class="form-control" />
+                              </div>
+                              <div class="form-group">
+                                    <label for="location">Job Location</label>
+                                    <input id="location" type="text" placeholder="Enter location of office" class="form-control" />
+                              </div>
+                              <div class="form-group">
+                                    <label for="description">Job Description</label>
+                                    <textarea id="description" rows="3" class="form-control"></textarea>
+                              </div>
+                              <div class="form-group">
+                                    <label for="date">Date Applied</label>
+                                    <input type="date" id="date" class="form-control" />
+                              </div>
+                              <button id="saveButton" class="btn btn-primary">Save Info</button>
+                              <!-- <button id="scanButton" type="button" class="btn btn-secondary">Scan</button>  -->
+                        </div>
                   </div>
-                  <div class="form-group">
-                     <label for="jobTitle">Job Title</label>
-                     <input id="jobTitle" type="text" placeholder="Enter title of the role" class="form-control"/>
-                  </div>
-                  <div class="form-group">
-                     <label for="location">Job Location</label>
-                     <input id="location" type="text" placeholder="Enter location of office" class="form-control"/>
-                  </div>
-                  <div class="form-group">
-                     <label for="description">Job Description</label>
-                     <textarea id="description" rows="3" class="form-control"></textarea>
-                  </div>
-                  <div class="form-group">
-                     <label for="date">Date Applied</label>
-                     <input type="date" id="date" class="form-control"/>
-                  </div>
-                  <button id="saveButton" class="btn btn-primary">Save Info</button>
-                  <button id="showButton" class="btn btn-secondary">Show Applied</button>
-               </form>
             </div>
-         </div>
-      
-   </body>
+           
+            <iframe id="success_anime" width="400px" height="500px" src="https://lottiefiles.com/iframe/1295-success-state" frameborder="0" allowfullscreen></iframe>
+          
+      </div>
+</body>
+
 </html>

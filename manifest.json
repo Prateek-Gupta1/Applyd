@@ -5,7 +5,9 @@
    "permissions": [
       "https://www.linkedin.com/jobs/view/*", 
       "http://www.linkedin.com/jobs/view/*",
-      "https://www.indeed.com/",
+      "https://www.linkedin.com/jobs/search/*",
+      "https://www.indeed.com/jobs?*",
+      "https://cdn.datatables.net/*",
       "tabs",
       "storage"
    ],
@@ -18,16 +20,16 @@
       "default_popup": "popup.html"
    },
    "content_scripts": [{
-      "matches": [
-         "https://www.linkedin.com/jobs/view/*", 
-         "http://www.linkedin.com/jobs/view/*",
-         "https://www.indeed.com/"
+      "matches": [ 
+         "https://www.indeed.com/*",
+         "https://www.linkedin.com/*"
       ],
       "js": [
          "js/jquery-1.7.min.js",
          "scan.js"
       ],
-      "run_at": "document_end"
+      "run_at": "document_start"
    }],
+   "content_security_policy": "script-src 'self' https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js; object-src 'self'",
    "manifest_version": 2
 }
