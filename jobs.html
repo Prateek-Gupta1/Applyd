@@ -8,26 +8,37 @@
       <script type="text/javascript" src="js/jquery-1.7.min.js"></script>
       <script type="text/javascript" src="js/bootstrap.min.js"></script>
       <script type="text/javascript" src="jobs.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
    </head>
    <body>
       <div class="container">
+         <nav class="navbar fixed-top navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Applyd</a>
+         </nav>
+         <br><br><br>
          <div class="col-12">
-         <table class="table table-bordered">
-            <thead class="thead-dark">
-               <tr>
-                  <th scope="col" colspan="1">#</th>
-                  <th scope="col" colspan="2">Company</th>
-                  <th scope="col" colspan="2">Job Title</th>
-                  <th scope="col" colspan="2">Location</th>
-                  <th scope="col" colspan="2">Date Applied</th>
-                  <th scope="col" colspan="3">Description</th>
-               </tr>
-            </thead>
-            <tbody id="tbody">
-
-            </tbody>
-         </table>
+         <div class="card" style="padding:10px;">
+            <div class="card-header text-center bg-dark text-light"> Jobs Applied </div>
+            <br>
+            <table class="table table-bordered" id="jobsTable">
+               <thead class="thead-dark">
+                  <tr>
+                     <th scope="col">#</th>
+                     <th scope="col">Company</th>
+                     <th scope="col">Job Title</th>
+                     <th scope="col">Location</th>
+                     <th scope="col">Date Applied</th>
+                     <th scope="col">Source</th>
+                     <th scope="col">Description</th>
+                  </tr>
+               </thead>
+               <tbody id="tbody">
+               </tbody>
+            </table>
       </div>
       </div>
+      </div>
+      <br><br>
    </body>
 </html>

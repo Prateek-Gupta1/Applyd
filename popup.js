@@ -3,12 +3,15 @@
   var jobInfo = {}
 
   function setDOMInfo(info) {
-    $('#company').val(info.company);
-    $('#jobTitle').val(info.jobTitle);
-    $('#location').val(info.location);
-    $('#description').val(info.description.trim());
-    $('#date').val(info.date);
-    jobInfo = info;
+    console.log(info);
+    if(info !== undefined && info !== null && !$.isEmptyObject(info)) {
+      $('#company').val(info.company);
+      $('#jobTitle').val(info.jobTitle);
+      $('#location').val(info.location);
+      $('#description').val(info.description.trim());
+      $('#date').val(info.date);
+      jobInfo = info;
+    }
   }
  
  // message the contentscript (scan.js) to scan the page and set the fields.
@@ -38,8 +41,12 @@
   window.addEventListener('DOMContentLoaded', function () {
     // add listener on button to store the job details...
     $(document).ready(function(){
+      $('#success_anime').hide();
       $('#saveButton').click(function(){
         storeJobInfo(jobInfo);
+        $('#content').hide('fast', 'linear', function(){
+          $('#success_anime').show('slow');
+        });
       });
       $('#showButton').click(function(){
         chrome.windows.create({
@@ -48,7 +55,7 @@
         })
       });
     })
-    // ask content script to scan and send the job details...
+    // ask content script to scan and send the job details... 
     sendScanRequest();
   });
 

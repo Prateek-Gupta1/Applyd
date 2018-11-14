@@ -6,10 +6,24 @@
       console.log(jobs);
       var tbod = ''
       $.each(jobs, function(i, job){
-         tbod += '<tr><td colspan="1">' + (i+1) + '</td><td colspan="2">' + job.company + '</td><td  colspan="2">' + job.jobTitle + 
-            '</td><td  colspan="2">' + job.location + '</td><td  colspan="2" width="15%">' + job.date + 
-            '</td><td colspan="3" width=40%><textarea name="desc" rows="5" style="min-width: 100%">' + job.description + '</textarea></td><tr>';
+            tbod += '<tr><td>' + (i+1) + '</td><td>' + job.company + '</td><td>' + job.jobTitle + 
+            '</td><td>' + job.location + '</td><td>' + job.date + '</td><td>' + job.src +
+            '</td><td><textarea name="desc" rows="5" style="min-width: 100%">' + job.description + '</textarea></td></tr>';
       });
       $("#tbody").append(tbod);
+      $('#jobsTable').DataTable({
+            "paging": true,
+            "searching": true,
+            "columnDefs": [{ orderable: false, targets: [6] }],
+            "columns": [
+                  { "width": "5%" },
+                  { "width": "10%" },
+                  { "width": "10%"},
+                  { "width": "10%" },
+                  { "width": "10%"},
+                  { "width": "10%" },
+                  { "width":  "45%"},
+            ] 
+      });
    });
 }());
