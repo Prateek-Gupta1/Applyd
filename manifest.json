@@ -30,6 +30,6 @@
       ],
       "run_at": "document_start"
    }],
-   "content_security_policy": "script-src 'self' https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js; object-src 'self'",
+   "content_security_policy": "script-src 'self' https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js; object-src 'self'",
    "manifest_version": 2
 }

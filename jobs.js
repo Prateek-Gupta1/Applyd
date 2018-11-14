@@ -23,6 +23,10 @@
                   { "width": "10%"},
                   { "width": "10%" },
                   { "width":  "45%"},
+            ],
+            dom: 'lBfrtip',
+            buttons: [
+                 'csv'
             ] 
       });
    });
