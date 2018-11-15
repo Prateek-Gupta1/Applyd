@@ -5,13 +5,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
       <script type="text/javascript" src="js/jquery-1.7.min.js"></script>
       <script type="text/javascript" src="js/bootstrap.min.js"></script>
       <script type="text/javascript" src="jobs.js"></script>
-      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
       <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
       <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-      <script  type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+      <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
       <style>
       .footer {
          bottom: 0;
@@ -33,7 +34,7 @@
          <br><br><br>
          <div class="col-12">
          <div class="card border-light" style="padding:10px;">
-            <div class="card-header text-center bg-dark text-light"> Jobs Applied </div>
+            <div class="card-header text-center bg-primary text-light"> Jobs Applied </div>
             <br>
             <table class="table table-bordered" id="jobsTable">
                <thead class="thead-dark">
@@ -50,7 +51,13 @@
                <tbody id="tbody">
                </tbody>
             </table>
-      </div>
+         </div>
+         <br><br>
+         <div class="card" style="padding:10px;">
+               <div class="card-header text-center bg-primary text-light"> Statistics </div>
+               <br>
+              <canvas id="stats" height="300px"></canvas>
+         </div>
       </div>
       </div>
       <br><br>
